@@ -14,7 +14,7 @@ function charger(){
       if(html != ""){
         $('#tchat').append(html);
         $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
-        $('#tchat').scrollTop($('#tchat')[0].scrollHeight);
+        $('body').scrollTop($('body')[0].scrollHeight);
       }
     }
   });

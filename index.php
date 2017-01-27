@@ -15,27 +15,29 @@
   <?php
   include_once 'utilisateur.php';
    ?>
-  <nav class="grey darken-4 white-text" role="navigation">
-    <div class="nav-wrapper container ">[BETA]<a id="logo-container" href="#" class="brand-logo"><img style="height: 64px;" class="responsive-img" src="images/logo_prisme.png" alt=""></a>
-      <ul class="right hide-on-med-and-down">
-        <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a href="#"><?php echo $_SESSION['userNom'] ?></a></li>
-        <li><a id="newid" href="#">Nouvelle identitée</a></li>
-      </ul>
-      <ul id="nav-mobile" class="side-nav">
-        <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a style="color: white;" href="#"><?php echo $_SESSION['userNom'] ?></a></li>
-        <li><a id="newid2" href="#">Générer une nouvelle identitée</a></li>
-        <ul class="collection" id="divusers">
-          <?php
-          include "querry_users.php";
-           ?>
-        </ul>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons teal-text text-darken-1">menu</i></a>
-    </div>
-  </nav>
+   <div class="">
+     <nav class="grey darken-4 white-text" role="navigation">
+       <div class="nav-wrapper container "><span class="titre_menu">PRSM</span > [BETA]<a id="logo-container" href="#" class="brand-logo"></a>
+         <ul class="right hide-on-med-and-down">
+           <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a href="#"><?php echo $_SESSION['userNom'] ?></a></li>
+           <li><a id="newid" href="#">Nouvelle identitée</a></li>
+         </ul>
+         <ul id="nav-mobile" class="side-nav">
+           <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a style="color: white;" href="#"><?php echo $_SESSION['userNom'] ?></a></li>
+           <li><a id="newid2" href="#">Générer une nouvelle identitée</a></li>
+           <ul class="collection" id="divusers">
+             <?php
+             include "querry_users.php";
+             ?>
+           </ul>
+         </ul>
+         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons teal-text text-darken-1">menu</i></a>
+       </div>
+     </nav>
+   </div>
   <div class="row">
     <div class="col l3 hide-on-med-and-down">
-      <ul class="collection" id="divusers">
+      <ul class="collection liste_users" id="divusers">
         <?php
         include "querry_users.php";
          ?>
@@ -50,16 +52,22 @@
       </div>
       <!-- FIN TCHAT -->
       <!-- TEXT -->
-      <div class="row">
+      <div class="fenetre_texte">
         <div class="row">
-          <input type="text" id="message" name="text" placeholder="Envoyer un message">
-          <input class="btn waves-effect waves-light" id="envoiMSG" type="submit" name="Envoi" value="Envoi">
+          <div class="col s10">
+            <input type="text" id="message" name="text" placeholder="Envoyer un message">
+          </div>
+          <div class="col s2">
+            <button class="btn waves-effect waves-light" id="envoiMSG"  type="submit" name="action">Envoi
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
         </div>
       </div>
       <!-- FIN TEXT -->
     </div>
   </div>
-  <footer class="page-footer  grey darken-4 white-text">
+  <!-- <footer class="page-footer  grey darken-4 white-text">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -73,7 +81,7 @@
       Made by <a class="orange-text text-lighten-3" href="https://frompixel.com">Frompixel</a>
       </div>
     </div>
-  </footer>
+  </footer> -->
   <!--  Scripts-->
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
