@@ -1,3 +1,6 @@
+body{
+  background-color: #f5f5f5;
+}
 .icon-block {
   padding: 0 15px;
 }
@@ -19,15 +22,17 @@
 
 }
 .fenetre_dialogue{
-  margin-bottom: 10px;
+  margin-bottom: 35px;
   overflow: auto;
   z-index: -1;
 }
 .fenetre_texte{
+  box-shadow: 0px -3px 10px 0px rgba(167, 167, 167, 0.79);
   position: fixed;
   height: 55px;
   bottom: 0px;
-  padding-top: 5px;
+  padding-top: 15px;
+  padding-bottom: 60px;
   width: 99%;
   left: 5px;
   background-color: white;
