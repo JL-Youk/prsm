@@ -2,7 +2,7 @@
 include_once 'config.php';
 // ...
 // on se connecte à notre base de données
-
+usleep(5000000);
 if(!empty($_GET['id'])){ // on vérifie que l'id est bien présent et pas vide
 
     $id = (int) $_GET['id']; // on s'assure que c'est un nombre entier
