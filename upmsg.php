@@ -21,5 +21,4 @@ if (isset($_SESSION['connecte'])){
     WHERE idunique = '$userIdUnique'";
     $base->exec($sql);
 }
-
  ?>

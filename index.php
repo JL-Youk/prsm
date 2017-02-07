@@ -11,6 +11,19 @@
   <link href="css/sweetalert.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+<!--
+.-------------------.
+|                   |
+|                   |
+|  P A R E N T A L  |
+|                   |
+|  A D V I S O R Y  |
+|                   |
+|                   |
+| explicit  content |
+|                   |
+`-------------------'
+-->
 <body>
   <?php
   include_once 'utilisateur.php';
