@@ -27,7 +27,13 @@
 <body>
   <?php
   include_once 'utilisateur.php';
-   ?>
+   if (isset($_GET['thread'])) {
+     $id_thread = htmlspecialchars($_GET['thread'], ENT_QUOTES);
+   }
+   else {
+     $id_thread = "world";
+   }
+    ?>
    <div class="">
      <nav class="grey darken-4 white-text" role="navigation">
        <div class="nav-wrapper container "><span class="titre_menu">PRSM</span > [BETA]<a id="logo-container" href="#" class="brand-logo"></a>
@@ -69,6 +75,7 @@
         <div class="row">
           <div class="col s10">
             <input type="text" id="message" name="text" placeholder="Envoyer un message">
+            <input type="hidden" id="thread" name="thread" value="<?php echo $id_thread ?>">
           </div>
           <div class="col s2">
             <button class="btn waves-effect waves-light" id="envoiMSG"  type="submit" name="action">Envoi
@@ -77,25 +84,8 @@
           </div>
         </div>
       </div>
-      <!-- FIN TEXT -->
     </div>
   </div>
-  <!-- <footer class="page-footer  grey darken-4 white-text">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Prsm</h5>
-          <p class="grey-text text-lighten-4">Copyright © 2017 Prsm. Tous droits réservés.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="https://frompixel.com">Frompixel</a>
-      </div>
-    </div>
-  </footer> -->
-  <!--  Scripts-->
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/sweetalert.min.js"></script>

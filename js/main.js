@@ -6,9 +6,9 @@ function mimite() {
 $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
 function charger(){
   var premierID = $('#tchat li:last').attr('id'); // on récupère l'id le plus récent
-  console.log(premierID);
+  var  thread = $("#thread").val();// on recul le nom du thread
   $.ajax({
-    url : "charger.php?id=" + premierID, // on passe l'id le plus récent au fichier de chargement
+    url : "charger.php?id=" + premierID + "&thread=" + thread, // on passe l'id le plus récent au fichier de chargement
     type : 'GET',
     success : function(html){
       if(html != ""){
@@ -25,11 +25,13 @@ var timercharger = setInterval(charger, 3000);
 
 function envoimessage() {
   message = $("#message").val();
-    if(message != "")
+  thread = $("#thread").val();
+    if(message != ""  && thread != "")
     {
       $.post("upmsg.php",
       {
-        message : message
+        message : message,
+        thread : thread
       },
       function(data) {
         $("#message").val("");
