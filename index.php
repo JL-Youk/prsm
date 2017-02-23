@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php
+if (isset($_GET['thread'])) {
+  $welcome = false;
+  $id_thread = htmlspecialchars($_GET['thread'], ENT_QUOTES);
+}
+else {
+  $welcome = true;
+  $id_thread = "Prsm";
+}
+ ?>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <meta charset="utf-8">
-  <title>Prsm</title>
+  <title><?php echo $id_thread."-Prsm" ?></title>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -27,19 +37,14 @@
 <body>
   <?php
   include_once 'utilisateur.php';
-   if (isset($_GET['thread'])) {
-     $id_thread = htmlspecialchars($_GET['thread'], ENT_QUOTES);
-   }
-   else {
-     $id_thread = "world";
-   }
     ?>
    <div class="">
      <nav class="grey darken-4 white-text" role="navigation">
-       <div class="nav-wrapper container "><span class="titre_menu">PRSM</span > [BETA]<a id="logo-container" href="#" class="brand-logo"></a>
+       <div class="nav-wrapper container "><span class="titre_menu">PRSM</span><?php echo "[".$id_thread."]" ?><a id="logo-container" href="#" class="brand-logo"></a>
          <ul class="right hide-on-med-and-down">
            <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a href="#"><?php echo $_SESSION['userNom'] ?></a></li>
            <li><a id="newid" href="#">Nouvelle identitée</a></li>
+           <li><a id="btnDiscution" href="#">Nouvelle discution</a></li>
          </ul>
          <ul id="nav-mobile" class="side-nav">
            <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a style="color: white;" href="#"><?php echo $_SESSION['userNom'] ?></a></li>
@@ -92,8 +97,37 @@
   <script src="js/init.js"></script>
   <script src="js/main.js"></script>
   <script type="text/javascript">
-    swal("Salut <?php echo $_SESSION['userNom'] ?>", "=)");
+  function ChangeDiscution() {
+    swal({
+      title: "<?php echo 'Salut '.$_SESSION['userNom'] ?>",
+      text: "Créer ou rejoint une discution",
+      type: "input",
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: "slide-from-top",
+      inputPlaceholder: "Write something"
+    },
+    function(inputValue){
+      if (inputValue === false) return false;
+      if (inputValue === "") {
+        swal.showInputError("il faut ecrire quelque chose!");
+        return false
+      }
+      var url = "?thread=" + inputValue;
+      window.location.replace(url);
+      swal("Nice!", "tu va etre rediriger vers la discution : " + inputValue, "success");
+    });
+  }
   </script>
+  <?php
+  if ($welcome) {
+    ?>
+    <script type="text/javascript">
+      ChangeDiscution();
+    </script>
+    <?php
+  }
+   ?>
   <!-- __________________________________________________
 ________________░▓█▓█▓▓▓▓█▓▓▒░____________________
 _______________▒█▓▓▓█████████▓▓▓▒_________________

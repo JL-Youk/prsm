@@ -47,7 +47,9 @@ function envoimessage() {
 $("#envoiMSG").click(function(event){
   envoimessage();
 });
-
+$("#btnDiscution").click(function(event){
+  ChangeDiscution();
+});
 $('body').keypress(function(e){
   if( e.which == 13 ){
     envoimessage();
