@@ -110,7 +110,7 @@ else {
       showCancelButton: true,
       closeOnConfirm: false,
       animation: "slide-from-top",
-      inputPlaceholder: "Write something"
+      inputPlaceholder: "Nom de ta discution"
     },
     function(inputValue){
       if (inputValue === false) return false;
@@ -118,9 +118,28 @@ else {
         swal.showInputError("il faut ecrire quelque chose!");
         return false
       }
-      var url = "?thread=" + inputValue;
-      window.location.replace(url);
-      swal("Nice!", "tu va etre rediriger vers la discution : " + inputValue, "success");
+      var thread = "?thread=" + inputValue;
+
+      // second carton
+      swal({
+        title: "Une derniere chose",
+        text: "la conversation peut etre cryter, ecris la clef si dessous ou laisse la vide si la conversation est public",
+        type: "input",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        animation: "slide-from-top",
+        inputPlaceholder: "Code de cryptage"
+      },
+      function(inputValue){
+        if (inputValue === false) return false;
+        if (inputValue === "") {
+          var mdp = "";
+        }
+        var mdp = inputValue;
+        var url = thread + "&crypt=" + mdp;
+        swal("Niquel!", "tu va etre rediriger vers la discution : " + inputValue, "success");
+        window.location.replace(url);
+      });
     });
   }
   </script>
