@@ -50,11 +50,42 @@ $("#envoiMSG").click(function(event){
 $("#btnDiscution").click(function(event){
   ChangeDiscution();
 });
+$("#btninfo").click(function(event){
+  info();
+});
+$("#btninfo2").click(function(event){
+  info();
+});
+$("#btnshare").click(function(event){
+  share();
+});
+$("#btnshare2").click(function(event){
+  share();
+});
+$("#btnDiscution2").click(function(event){
+  ChangeDiscution();
+});
 $('body').keypress(function(e){
   if( e.which == 13 ){
     envoimessage();
   }
 });
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+function share() {
+  swal({
+    title: "Partage",
+    text: "<a href='https://twitter.com/share'  target='_blank' class='twitter-share-button' data-size='large' data-hashtags='prsm'>Tweet</a>",
+    html: true
+  });
+}
+function info() {
+  swal({
+    title: "Prsm",
+    text: "<p>Prsm est un tchat anonyme qui ne garde aucune donnée sur ses utilisateurs et leurs généere des identités aléatoire, sont utilisation est gratuite et illimité.</p><br>Le code source est disponible ici :<br> <a href='https://github.com/JL-Youk/prsm'>github.com/JL-Youk/prsm</a>",
+    html: true
+  });
+}
 function resetname() {
   swal({
     title: "Are you sure?",
