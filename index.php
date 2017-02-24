@@ -44,11 +44,16 @@ else {
          <ul class="right hide-on-med-and-down">
            <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a href="#"><?php echo $_SESSION['userNom'] ?></a></li>
            <li><a id="newid" href="#">Nouvelle identitée</a></li>
-           <li><a id="btnDiscution" href="#">Nouvelle discution</a></li>
+           <li><a id="btnDiscution" href="#"><i class="material-icons">message</i></a></li>
+           <li><a id="btnshare" href="#"><i class="material-icons">share</i></a></li>
+           <li><a id="btninfo" href="#"><i class="material-icons">info_outline</i></a></li>
          </ul>
          <ul id="nav-mobile" class="side-nav">
            <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a style="color: white;" href="#"><?php echo $_SESSION['userNom'] ?></a></li>
-           <li><a id="newid2" href="#">Générer une nouvelle identitée</a></li>
+           <li><a id="newid2" href="#"><i class="material-icons">autorenew</i>Générer une nouvelle identitée</a></li>
+           <li><a id="btnDiscution2" href="#"><i class="material-icons">message</i>Nouvelle discution</a></li>
+           <li><a id="btnshare2" href="#"><i class="material-icons">share</i>Partages</a></li>
+           <li><a id="btninfo2" href="#"><i class="material-icons">info_outline</i>Informations</a></li>
            <ul class="collection" id="divusers">
              <?php
              include "querry_users.php";
