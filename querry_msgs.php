@@ -4,8 +4,7 @@ include_once 'decryptage.php';
 $datelast10min = (strtotime(date("d-m-Y H:i:s"))) - 600;
 $requete_donnees_messages = $base->prepare("SELECT * FROM prsm_msgs WHERE datemsg > $datelast10min AND thread = '$id_thread'");
 if ($requete_donnees_messages->execute()) {
-  while( $donnees_messages = $requete_donnees_messages->fetch() )
-  {
+  while( $donnees_messages = $requete_donnees_messages->fetch() ){
     ?>
     <li id="<?php echo $donnees_messages['id'] ?>" class="<?php echo $donnees_messages['userCouleur']." ".$donnees_messages['userVal'] ?> white-text dialogue">
       <?php

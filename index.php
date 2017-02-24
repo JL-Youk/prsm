@@ -145,10 +145,13 @@ else {
         var mdp = inputValue;
         var url = thread + "&crypt=" + mdp;
         swal("Niquel!", "tu va etre rediriger vers la discution : " + inputValue, "success");
-        window.location.replace(url);
+        setTimeout(function(){
+          window.location.replace(url);
+        }, 2000);
       });
     });
   }
+
   </script>
   <?php
   if ($welcome) {
