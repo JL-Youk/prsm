@@ -46,7 +46,7 @@ else {
     ?>
    <div class="">
      <nav class="grey darken-4 white-text" role="navigation">
-       <div class="nav-wrapper container "><span class="titre_menu">PRSM</span><?php echo "[".$id_thread."]" ?><a id="logo-container" href="#" class="brand-logo"></a>
+       <div class="nav-wrapper container "><a href="index.php"><span class="titre_menu">PRSM</span></a><?php echo "[".$id_thread."]" ?><a id="logo-container" href="#" class="brand-logo"></a>
          <ul class="right hide-on-med-and-down">
            <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a href="#"><?php echo $_SESSION['userNom'] ?></a></li>
            <li><a id="newid" href="#">Nouvelle identitée</a></li>

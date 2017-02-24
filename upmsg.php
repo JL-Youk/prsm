@@ -15,7 +15,7 @@ if (isset($_SESSION['connecte'])){
     $dateentrée = strtotime(date("d-m-Y H:i:s"));
 
     // Cryptage message
-    $message = f_crypt($crypt, $message);
+    $message = f_crypt($crypt.$clefPrsm, $message);
 
     //Update des messages en bdd
     $stmt = $base->prepare("INSERT INTO prsm_msgs  (contenu, userIdUnique, userNom, userCouleur, userVal, datemsg, thread) VALUES (?, ?, ?, ?, ?, ?, ?)");

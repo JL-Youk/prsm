@@ -9,7 +9,7 @@ if ($requete_donnees_messages->execute()) {
     <li id="<?php echo $donnees_messages['id'] ?>" class="<?php echo $donnees_messages['userCouleur']." ".$donnees_messages['userVal'] ?> white-text dialogue">
       <?php
        $messages = htmlspecialchars_decode($donnees_messages['contenu'], ENT_NOQUOTES);
-       $maChaineDecrypter = f_decrypt($id_crypt,  $messages);
+       $maChaineDecrypter = f_decrypt($id_crypt.$clefPrsm,  $messages);
        echo $maChaineDecrypter;
        ?>
       <div class="right-align grey-text text-lighten-2 signature">

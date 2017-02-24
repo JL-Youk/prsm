@@ -20,7 +20,6 @@ function charger(){
     }
   });
 }
-
 var timer = setInterval(mimite, 30000);
 var timercharger = setInterval(charger, 3000);
 
