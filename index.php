@@ -9,6 +9,12 @@ else {
   $welcome = true;
   $id_thread = "Prsm";
 }
+if (isset($_GET['crypt'])) {
+  $id_crypt = htmlspecialchars($_GET['crypt'], ENT_QUOTES);
+}
+else {
+  $id_crypt = "";
+}
  ?>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -86,6 +92,7 @@ else {
           <div class="col s10">
             <input type="text" id="message" name="text" placeholder="Envoyer un message">
             <input type="hidden" id="thread" name="thread" value="<?php echo $id_thread ?>">
+            <input type="hidden" id="crypt" name="crypt" value="<?php echo $id_crypt ?>">
           </div>
           <div class="col s2">
             <button class="btn waves-effect waves-light" id="envoiMSG"  type="submit" name="action">Envoi
