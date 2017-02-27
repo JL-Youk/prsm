@@ -1,32 +1,32 @@
-function mimite() {
-  // mise a jour de la liste des utilisateurs
-  $('#divusers').load('querry_users.php');
-}
-
-$( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
-function charger(){
-  var premierID = $('#tchat li:last').attr('id'); // on récupère l'id le plus récent
-  var  thread = $("#thread").val();// on recul le nom du thread
-  var  crypt = $("#crypt").val();// on recul le nom du thread
-  $.ajax({
-    url : "charger.php?id=" + premierID + "&thread=" + thread + "&crypt=" + crypt, // on passe l'id le plus récent au fichier de chargement
-    type : 'GET',
-    success : function(html){
-      if(html != ""){
-        $('#tchat').append(html);
-        $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
-        $('body').scrollTop($('body')[0].scrollHeight);
+$(document).ready(function(){
+  function mimite() {
+    // mise a jour de la liste des utilisateurs
+    $('#divusers').load('querry_users.php');
+  }
+  $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
+  function charger(){
+    var premierID = $('#tchat li:last').attr('id'); // on récupère l'id le plus récent
+    var  thread = $("#thread").val();// on recul le nom du thread
+    var  crypt = $("#crypt").val();// on recul le nom du thread
+    $.ajax({
+      url : "charger.php?id=" + premierID + "&thread=" + thread + "&crypt=" + crypt, // on passe l'id le plus récent au fichier de chargement
+      type : 'GET',
+      success : function(html){
+        if(html != ""){
+          $('#tchat').append(html);
+          $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
+          $('body').scrollTop($('body')[0].scrollHeight);
+        }
       }
-    }
-  });
-}
-var timer = setInterval(mimite, 30000);
-var timercharger = setInterval(charger, 3000);
+    });
+  }
+  var timer = setInterval(mimite, 30000);
+  var timercharger = setInterval(charger, 3000);
 
-function envoimessage() {
-  message = $("#message").val();
-  thread = $("#thread").val();
-  crypt = $("#crypt").val();
+  function envoimessage() {
+    message = $("#message").val();
+    thread = $("#thread").val();
+    crypt = $("#crypt").val();
     if(message != ""  && thread != "")
     {
       $.post("upmsg.php",
@@ -108,4 +108,5 @@ $("#newid").click(function() {
 });
 $("#newid2").click(function() {
   resetname();
+});
 });

@@ -6,7 +6,7 @@ $requete_donnees_messages = $base->prepare("SELECT * FROM prsm_msgs WHERE datems
 if ($requete_donnees_messages->execute()) {
   while( $donnees_messages = $requete_donnees_messages->fetch() ){
     ?>
-    <li id="<?php echo $donnees_messages['id'] ?>" class="<?php echo $donnees_messages['userCouleur']." ".$donnees_messages['userVal'] ?> white-text dialogue">
+    <li id="<?php echo $donnees_messages['id'] ?>" class="waves-effect <?php echo $donnees_messages['userCouleur']." ".$donnees_messages['userVal'] ?> white-text dialogue">
       <?php
        $messages = htmlspecialchars_decode($donnees_messages['contenu'], ENT_NOQUOTES);
        $maChaineDecrypter = f_decrypt($id_crypt.$clefPrsm,  $messages);
