@@ -6,8 +6,8 @@ $(document).ready(function(){
   $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
   function charger(){
     var premierID = $('#tchat li:last').attr('id'); // on récupère l'id le plus récent
-    var  thread = $("#thread").val();// on recul le nom du thread
-    var  crypt = $("#crypt").val();// on recul le nom du thread
+    var  thread = $("#thread").val();// on recup le nom du thread
+    var  crypt = $("#crypt").val();// on recup le mot de cryptage
     $.ajax({
       url : "charger.php?id=" + premierID + "&thread=" + thread + "&crypt=" + crypt, // on passe l'id le plus récent au fichier de chargement
       type : 'GET',
@@ -84,7 +84,7 @@ function share() {
 function info() {
   swal({
     title: "Prsm",
-    text: "<p>Prsm est un tchat anonyme qui ne garde aucune donnée sur ses utilisateurs et leurs généere des identités aléatoire, sont utilisation est gratuite et illimité.</p><br>Le code source est disponible ici :<br> <a href='https://github.com/JL-Youk/prsm'>github.com/JL-Youk/prsm</a>",
+    text: "<p>Prsm est un tchat anonyme qui ne garde aucune donnée sur ses utilisateurs et leurs génére des identités aléatoire, sont utilisation est gratuite et illimité.</p><br>Le code source est disponible ici :<br> <a href='https://github.com/JL-Youk/prsm'>github.com/JL-Youk/prsm</a>",
     html: true
   });
 }
