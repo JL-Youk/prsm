@@ -25,6 +25,7 @@ else {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/sweetalert.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <!--
@@ -44,7 +45,7 @@ else {
   <?php
   include_once 'utilisateur.php';
     ?>
-   <div class="">
+   <div class="navbar-fixed">
      <nav class="grey darken-4 white-text" role="navigation">
        <div class="nav-wrapper container "><a href="index.php"><span class="titre_menu">PRSM</span></a><?php echo "[".$id_thread."]" ?><a id="logo-container" href="#" class="brand-logo"></a>
          <ul class="right hide-on-med-and-down">
@@ -54,22 +55,22 @@ else {
            <li><a id="btnshare" href="#"><i class="material-icons">share</i></a></li>
            <li><a id="btninfo" href="#"><i class="material-icons">info_outline</i></a></li>
          </ul>
-         <ul id="nav-mobile" class="side-nav">
-           <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a style="color: white;" href="#"><?php echo $_SESSION['userNom'] ?></a></li>
-           <li><a id="newid2" href="#"><i class="material-icons">autorenew</i>Générer une nouvelle identitée</a></li>
-           <li><a id="btnDiscution2" href="#"><i class="material-icons">message</i>Nouvelle discution</a></li>
-           <li><a id="btnshare2" href="#"><i class="material-icons">share</i>Partages</a></li>
-           <li><a id="btninfo2" href="#"><i class="material-icons">info_outline</i>Informations</a></li>
-           <ul class="collection" id="divusers">
-             <?php
-             include "querry_users.php";
-             ?>
-           </ul>
-         </ul>
          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons teal-text text-darken-1">menu</i></a>
        </div>
      </nav>
    </div>
+   <ul id="nav-mobile" class="side-nav">
+     <li class="<?php echo $_SESSION['userCouleur'] ?> <?php echo $_SESSION['userVal'] ?>"><a style="color: white;" href="#"><?php echo $_SESSION['userNom'] ?></a></li>
+     <li><a id="newid2" href="#"><i class="material-icons">autorenew</i>Générer une nouvelle identitée</a></li>
+     <li><a id="btnDiscution2" href="#"><i class="material-icons">message</i>Nouvelle discution</a></li>
+     <li><a id="btnshare2" href="#"><i class="material-icons">share</i>Partages</a></li>
+     <li><a id="btninfo2" href="#"><i class="material-icons">info_outline</i>Informations</a></li>
+     <ul class="collection" id="divusers">
+       <?php
+       include "querry_users.php";
+       ?>
+     </ul>
+   </ul>
   <div class="row">
     <div class="col l3 hide-on-med-and-down">
       <ul class="collection liste_users" id="divusers">

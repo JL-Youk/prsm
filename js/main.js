@@ -109,4 +109,20 @@ $("#newid").click(function() {
 $("#newid2").click(function() {
   resetname();
 });
+// click sur les messages
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
+$('#tchat').on('click','li', function() {
+  $(this).animateCss('animated pulse');
+ });
+// $(".dialogue").click(function() {
+//     $(this).animateCss('animated pulse');
+// });
+// animated infinite pulse
 });
