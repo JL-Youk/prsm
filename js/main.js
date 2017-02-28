@@ -1,9 +1,10 @@
 $(document).ready(function(){
+  //Fare apparaitre les dialogues
+  $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
   function mimite() {
     // mise a jour de la liste des utilisateurs
     $('#divusers').load('querry_users.php');
   }
-  $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
   function charger(){
     var premierID = $('#tchat li:last').attr('id'); // on récupère l'id le plus récent
     var  thread = $("#thread").val();// on recup le nom du thread

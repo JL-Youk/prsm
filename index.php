@@ -24,9 +24,9 @@ else {
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/sweetalert.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/animate.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/sweetalert.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/animate.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <!--
 .-------------------.
@@ -107,8 +107,8 @@ else {
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/sweetalert.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/init.min.js"></script>
+  <script src="js/main.min.js"></script>
   <script type="text/javascript">
   function ChangeDiscution() {
     swal({
