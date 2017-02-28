@@ -55,7 +55,7 @@ else {
            <li><a id="btnshare" href="#"><i class="material-icons">share</i></a></li>
            <li><a id="btninfo" href="#"><i class="material-icons">info_outline</i></a></li>
          </ul>
-         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons teal-text text-darken-1">menu</i></a>
+         <a href="#" data-activates="nav-mobile" class="button-collapse <?php echo $_SESSION['userCouleur'] ?>-text text-<?php echo $_SESSION['userVal'] ?>"><i class="material-icons">menu</i></a>
        </div>
      </nav>
    </div>
@@ -79,7 +79,7 @@ else {
          ?>
       </ul>
     </div>
-    <div class="col l9 m12 s12">
+    <div class="col l9 s12">
       <!-- TCHAT -->
       <div class="row">
         <ul class="fenetre_dialogue" id="tchat">
