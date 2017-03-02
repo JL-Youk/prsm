@@ -21,8 +21,7 @@ $(document).ready(function(){
       }
     });
   }
-  var timer = setInterval(mimite, 30000);
-  var timercharger = setInterval(charger, 3000);
+
 
   function envoimessage() {
     message = $("#message").val();
@@ -47,6 +46,7 @@ $(document).ready(function(){
     Materialize.toast('Champ de text vide', 4000);
   }
 }
+// Gestion du menu
 $("#envoiMSG").click(function(event){
   envoimessage();
 });
@@ -67,6 +67,12 @@ $("#btnshare2").click(function(event){
 });
 $("#btnDiscution2").click(function(event){
   ChangeDiscution();
+});
+$("#newid").click(function() {
+  resetname();
+});
+$("#newid2").click(function() {
+  resetname();
 });
 $('body').keypress(function(e){
   if( e.which == 13 ){
@@ -91,26 +97,20 @@ function info() {
 }
 function resetname() {
   swal({
-    title: "Are you sure?",
-    text: "Votre identité actuelle sera définitivement modifié",
+    title: "Tu es sûr?",
+    text: "Votre identité actuelle sera définitivement suprimé",
     type: "warning",
     showCancelButton: true,
     confirmButtonColor: "#DD6B55",
-    confirmButtonText: "Yes, delete it!",
+    confirmButtonText: "Oui, je suprime!",
     closeOnConfirm: false
   },
   function(){
     window.location.replace("reset.php");
-    swal("Deleted!", "identité effacé.", "success");
+    swal("Suprimé!", "identité effacé.", "success");
   });
 }
-$("#newid").click(function() {
-  resetname();
-});
-$("#newid2").click(function() {
-  resetname();
-});
-// click sur les messages
+// fonction d'animation du click sur les messages
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -119,11 +119,40 @@ $.fn.extend({
         });
     }
 });
+// fonction qui chercher les dernieres pulsation en fonction d'une date
+function getpulse(lastpulse){
+  $.post("getpulse.php",
+		{
+			lastpulse : lastpulse
+		},
+		function(data) {
+      $("#response-div").html(data);
+      $("#response-div").find("script").each(function(i) {
+      eval($(this).text());
+       });
+		}
+	);
+};
+// la fonction pulse, appelle une page qui met a jour la date vers le message correspondant a l'id
+function pulse(id){
+  $.post("pulse.php",
+		{
+			id : id
+		}
+	);
+};
+// Evenement lorceque un utilisateur clique sur un message
 $('#tchat').on('click','li', function() {
   $(this).animateCss('animated pulse');
+  id = $(this).attr('id');
+  pulse(id);
  });
-// $(".dialogue").click(function() {
-//     $(this).animateCss('animated pulse');
-// });
-// animated infinite pulse
+
+ // les timers
+ function funcgetpulse() {
+   getpulse(date);
+ }
+ var timer = setInterval(mimite, 30000);
+ var timercharger = setInterval(charger, 3000);
+ var timergetpulse = setInterval(funcgetpulse, 3000);
 });

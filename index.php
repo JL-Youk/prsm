@@ -26,7 +26,7 @@ else {
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/sweetalert.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/animate.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <!--
 .-------------------.
@@ -104,12 +104,16 @@ else {
       </div>
     </div>
   </div>
+  <div id="response-div">
+
+  </div>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/sweetalert.min.js"></script>
   <script src="js/init.min.js"></script>
-  <script src="js/main.min.js"></script>
+  <script src="js/main.js"></script>
   <script type="text/javascript">
+  date = <?php echo strtotime(date("d-m-Y H:i:s")); ?>;
   function ChangeDiscution() {
     swal({
       title: "<?php echo 'Salut '.$_SESSION['userNom'] ?>",
@@ -131,7 +135,7 @@ else {
       // second carton
       swal({
         title: "Une derniere chose",
-        text: "la conversation peut etre cryter, ecris la clef si dessous ou laisse la vide si la conversation est public",
+        text: "la conversation peut être cryté, ecris la clef si dessous ou laisse la vide si la conversation est public",
         type: "input",
         showCancelButton: true,
         closeOnConfirm: false,
@@ -154,15 +158,7 @@ else {
   }
 
   </script>
-  <?php
-  if ($welcome) {
-    ?>
-    <script type="text/javascript">
-      ChangeDiscution();
-    </script>
-    <?php
-  }
-   ?>
+
   <!-- __________________________________________________
 ________________░▓█▓█▓▓▓▓█▓▓▒░____________________
 _______________▒█▓▓▓█████████▓▓▓▒_________________
