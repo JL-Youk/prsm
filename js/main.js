@@ -4,6 +4,7 @@ $(document).ready(function(){
   function mimite() {
     // mise a jour de la liste des utilisateurs
     $('#divusers').load('querry_users.php');
+    $('#divusersnav').load('querry_users.php');
   }
   function charger(){
     var premierID = $('#tchat li:last').attr('id'); // on récupère l'id le plus récent
@@ -152,7 +153,7 @@ $('#tchat').on('click','li', function() {
  function funcgetpulse() {
    getpulse(date);
  }
- var timer = setInterval(mimite, 30000);
+ var timer = setInterval(mimite, 10000);
  var timercharger = setInterval(charger, 3000);
  var timergetpulse = setInterval(funcgetpulse, 3000);
 });

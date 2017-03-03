@@ -65,7 +65,7 @@ else {
      <li><a id="btnDiscution2" href="#"><i class="material-icons">message</i>Nouvelle discution</a></li>
      <li><a id="btnshare2" href="#"><i class="material-icons">share</i>Partages</a></li>
      <li><a id="btninfo2" href="#"><i class="material-icons">info_outline</i>Informations</a></li>
-     <ul class="collection" id="divusers">
+     <ul class="collection" id="divusersnav">
        <?php
        include "querry_users.php";
        ?>
