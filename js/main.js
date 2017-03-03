@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  execptPulseID = 0;
+  execptPulseTime = 0;
   //Fare apparaitre les dialogues
   $( "#tchat" ).children( ".dialogue" ).fadeTo( "slow", 1 );
   function mimite() {
@@ -38,8 +40,8 @@ $(document).ready(function(){
       },
       function(data) {
         $("#message").val("");
-        mimite();
-        charger();
+        // mimite();
+        // charger();
       }
     );
   }
@@ -124,7 +126,8 @@ $.fn.extend({
 function getpulse(lastpulse){
   $.post("getpulse.php",
 		{
-			lastpulse : lastpulse
+			lastpulse : lastpulse,
+			execptPulseTime : execptPulseTime
 		},
 		function(data) {
       $("#response-div").html(data);
@@ -139,7 +142,10 @@ function pulse(id){
   $.post("pulse.php",
 		{
 			id : id
-		}
+		},
+    function(data) {
+      execptPulseTime = data;
+    }
 	);
 };
 // Evenement lorceque un utilisateur clique sur un message
@@ -153,7 +159,7 @@ $('#tchat').on('click','li', function() {
  function funcgetpulse() {
    getpulse(date);
  }
- var timer = setInterval(mimite, 10000);
- var timercharger = setInterval(charger, 3000);
- var timergetpulse = setInterval(funcgetpulse, 3000);
+ var timer = setInterval(mimite, 30000);
+ var timercharger = setInterval(charger, 5000);
+ var timergetpulse = setInterval(funcgetpulse, 5000);
 });

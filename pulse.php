@@ -10,5 +10,6 @@ if (isset($_POST['id'])) {
   $stmt->bindParam(':id', $id, PDO::PARAM_STR);
   $stmt->bindParam(':datepulse', $date, PDO::PARAM_STR);
   $stmt->execute();
+  echo $date;
 }
  ?>
