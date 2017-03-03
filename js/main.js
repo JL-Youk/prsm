@@ -143,7 +143,7 @@ function pulse(id){
 };
 // Evenement lorceque un utilisateur clique sur un message
 $('#tchat').on('click','li', function() {
-  $(this).animateCss('animated pulse');
+  $(this).animateCss('animated pulseIn');
   id = $(this).attr('id');
   pulse(id);
  });
