@@ -90,15 +90,15 @@ else {
       <!-- TEXT -->
       <div class="fenetre_texte">
         <div class="row">
-          <div class="col s10">
+          <div class="col l10 m9 s8">
             <input type="text" id="message" name="text" placeholder="Envoyer un message">
             <input type="hidden" id="thread" name="thread" value="<?php echo $id_thread ?>">
             <input type="hidden" id="crypt" name="crypt" value="<?php echo $id_crypt ?>">
           </div>
-          <div class="col s2">
-            <button class="btn waves-effect waves-light" id="envoiMSG"  type="submit" name="action">Envoi
-              <i class="material-icons right">send</i>
-            </button>
+          <div class="col l2 m3 s4">
+            <div class="btnEnvoi grey lighten-3 center-align <?php echo $_SESSION['userCouleur'] ?>-text text-<?php echo $_SESSION['userVal'] ?> waves-effect waves-light" id="envoiMSG"  type="submit" name="action">
+              <i class="material-icons ">send</i>
+            </div>
           </div>
         </div>
       </div>
