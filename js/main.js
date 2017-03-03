@@ -106,6 +106,7 @@ function resetname() {
     showCancelButton: true,
     confirmButtonColor: "#DD6B55",
     confirmButtonText: "Oui, je suprime!",
+    cancelButtonText: "Non!",
     closeOnConfirm: false
   },
   function(){

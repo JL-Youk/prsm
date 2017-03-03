@@ -120,6 +120,8 @@ else {
       type: "input",
       showCancelButton: true,
       closeOnConfirm: false,
+      cancelButtonText: "Non",
+      confirmButtonText: "Go!",
       animation: "slide-from-top",
       inputPlaceholder: "Nom de ta discution"
     },
@@ -130,13 +132,14 @@ else {
         return false
       }
       var thread = "?thread=" + inputValue;
-
       // second carton
       swal({
         title: "Une derniere chose",
         text: "la conversation peut être cryté, ecris la clef si dessous ou laisse la vide si la conversation est public",
         type: "input",
         showCancelButton: true,
+        cancelButtonText: "Annuler",
+        confirmButtonText: "Goooo!",
         closeOnConfirm: false,
         animation: "slide-from-top",
         inputPlaceholder: "Code de cryptage"
