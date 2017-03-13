@@ -141,7 +141,7 @@ function getpulse(lastpulse){
 // la fonction pulse, appelle une page qui met a jour la date vers le message correspondant a l'id
 function pulse(id){
   $.post("pulse.php",
-		{
+    {
 			id : id
 		},
     function(data) {
@@ -154,13 +154,13 @@ $('#tchat').on('click','li', function() {
   $(this).animateCss('animated pulseIn');
   id = $(this).attr('id');
   pulse(id);
- });
-
+ }
+);
  // les timers
  function funcgetpulse() {
    getpulse(date);
  }
- var timer = setInterval(mimite, 30000);
- var timercharger = setInterval(charger, 5000);
- var timergetpulse = setInterval(funcgetpulse, 5000);
+ var timer = setInterval(mimite, 20000);
+ var timercharger = setInterval(charger, 1000);
+ var timergetpulse = setInterval(funcgetpulse, 1000);
 });
